@@ -1,45 +1,83 @@
-# Workflow Status
 
-## Create Mochawesome report
+# Badgeboard
 
-[![Create Mochawesome report](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/run-cypress-tests.yml/badge.svg)](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/run-cypress-tests.yml)
+This is an awesome information radiator
+to show the status of the badges you
+have in your project.
 
+![](https://raw.githubusercontent.com/pystol/badgeboard/master/assets/images/badgeboard.png)
 
-## Cypress mini slack notify
+A badge is any visual token of achievement,
+affiliation, authorization, or other trust
+relationship.
+The badges are displayed as a CI dashboard.
 
-[![Cypress mini slack notify](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/mini-slack-notify.yml/badge.svg)](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/mini-slack-notify.yml)
+## Demo
 
+Just [open the index.html](https://badgeboard.pystol.org/)
+file and see how the dashboard is rendered.
 
-## Cypress slack notify
+## Requirements
 
-[![Cypress slack notify](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/slack-notify.yml/badge.svg)](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/slack-notify.yml)
+None! Just clone the repo and open the index.html file
+in your favorite browser.
 
+Once you have a copy, make the adjustments to the configuration
+file located in **assets/data_source/badges_list.js** to use your
+own badges.
 
-## Cypress with Junit reporter
+**Note:** Due to CORS restrictions, this page uses a
+[proxy](https://cors-anywhere.herokuapp.com/)
+to add cross-origin headers when building the widgets panel.
+Check additional information about the CORS proxy on
+[NPM](https://www.npmjs.com/package/cors-anywhere).
 
-[![Cypress with Junit reporter](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/junit-reporter.yml/badge.svg)](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/junit-reporter.yml)
+## How it works
 
+We capture the badges list (SVG files) and
+we read the color information from a single pixel,
+from there, depending on the color of the pixel the
+widget is painted with its corresponding color.
 
-## Echo inputs
+![](https://raw.githubusercontent.com/pystol/badgeboard/master/assets/images/measure.png)
 
-[![Echo inputs](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/echo-inputs.yml/badge.svg)](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/echo-inputs.yml)
+This would be the ussual view of the project badges.
 
+![](https://raw.githubusercontent.com/pystol/badgeboard/master/assets/images/badges.png)
 
-## Post to New Relic
+## Adding your badges and colors
 
-[![Post to New Relic](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/post-new-relic.yml/badge.svg)](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/post-new-relic.yml)
+Use the **coordinates_testing.html** file
+to determine based on the SVG coordinates
+the RGB color to be used in the JS configuration
+file.
 
+To do so, copy the link to your badge, find the
+badge example in the file, replace it with yours,
+open the file in a browser, get the console logs
+and move around the mouse over the badge to see
+the coordinates and the RBG color that matches it.
 
-## Run with parameters
+## Adding custom color badges
 
-[![Run with parameters](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/run-cypress-tests-with-parameters.yml/badge.svg)](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/run-cypress-tests-with-parameters.yml)
+To add new colors, edit the **assets/css/custom.css** file and
+add new color definitions for the widgets. Once
+you define the new color, in the configuration file
+called **assets/data_source/badges_list.js**
+use the new color like in the following example.
 
+```bash
+colors:[['<new_color_definition','<matching_rgb_from_the _badge>'],['status-good','48,196,82']],
+```
 
-## Triggering a worflow from another one
+## References
 
-[![Triggering a worflow from another one](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/trigger-from-another-workflow.yml/badge.svg)](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/trigger-from-another-workflow.yml)
+We use both [smashing](https://github.com/smashing/smashing)
+and [gridster](https://github.com/ducksboard/gridster.js)
+to create the dashboard and its widgets.
 
+## License
 
-## Upload artifacts after build completes
-
-[![Upload artifacts after build completes](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/upload-artifacts.yml/badge.svg)](https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/upload-artifacts.yml)
+Badgeboard is part of Pystol and Pystol is
+open source software licensed under the
+[Apache license](LICENSE).
