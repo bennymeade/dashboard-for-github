@@ -43,7 +43,7 @@ var badges = [
 },
 {
   type: 'badge',
-	size:{x:3,y:2},
+  	size:{x:2,y:2},
 	position:{x:1,y:2},
   uri: corssproxy + 'https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/run-cypress-tests.yml/badge.svg',
 	title: "Mochawesome report",
@@ -54,7 +54,7 @@ var badges = [
 },
 {
   type: 'badge',
-	size:{x:3,y:2},
+  	size:{x:2,y:2},
 	position:{x:2,y:2},
   uri: corssproxy + 'https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/slack-notify.yml/badge.svg',
 	title: "Cypress slack notify",
@@ -65,7 +65,7 @@ var badges = [
 },
 {
   type: 'badge',
- 	size:{x:3,y:2},
+  	size:{x:2,y:2},
  	position:{x:3,y:2},
 	uri: corssproxy + 'https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/post-new-relic.yml/badge.svg',
 	title: "Post to New Relic",
@@ -76,7 +76,7 @@ var badges = [
 },
 {
   type: 'badge',
- 	size:{x:3,y:2},
+  	size:{x:2,y:2},
  	position:{x:4,y:2},
 	uri: corssproxy + 'https://github.com/bennymeade/cypress-reporting-gh-pages/actions/workflows/echo-inputs.yml/badge.svg',
 	title: "Echo inputs",
